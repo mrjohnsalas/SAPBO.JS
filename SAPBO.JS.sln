@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAPBO.JS.WebApi", "SAPBO.JS.WebApi\SAPBO.JS.WebApi.csproj", "{24241626-A172-4CDA-A1E6-77327B1292E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAPBO.JS.Model", "SAPBO.JS.Model\SAPBO.JS.Model.csproj", "{A2C8C314-4DFB-41A5-BCEF-A2D9696FA4AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAPBO.JS.Data", "SAPBO.JS.Data\SAPBO.JS.Data.csproj", "{D9ED48BF-0BF7-4EDF-BBDF-E118F6BB36B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAPBO.JS.Common", "SAPBO.JS.Common\SAPBO.JS.Common.csproj", "{866260B2-E4F3-4163-B0E7-1FCCBF56B99A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAPBO.JS.Business", "SAPBO.JS.Business\SAPBO.JS.Business.csproj", "{2BD95E5F-429F-4FF1-B36B-05C96C8581BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPBO.JS.ReportDesigner", "SAPBO.JS.ReportDesigner\SAPBO.JS.ReportDesigner.csproj", "{761D3D72-2074-4F9D-B7C3-BA16C0A40C63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24241626-A172-4CDA-A1E6-77327B1292E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24241626-A172-4CDA-A1E6-77327B1292E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24241626-A172-4CDA-A1E6-77327B1292E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24241626-A172-4CDA-A1E6-77327B1292E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C8C314-4DFB-41A5-BCEF-A2D9696FA4AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C8C314-4DFB-41A5-BCEF-A2D9696FA4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C8C314-4DFB-41A5-BCEF-A2D9696FA4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C8C314-4DFB-41A5-BCEF-A2D9696FA4AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9ED48BF-0BF7-4EDF-BBDF-E118F6BB36B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9ED48BF-0BF7-4EDF-BBDF-E118F6BB36B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9ED48BF-0BF7-4EDF-BBDF-E118F6BB36B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9ED48BF-0BF7-4EDF-BBDF-E118F6BB36B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{866260B2-E4F3-4163-B0E7-1FCCBF56B99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866260B2-E4F3-4163-B0E7-1FCCBF56B99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866260B2-E4F3-4163-B0E7-1FCCBF56B99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866260B2-E4F3-4163-B0E7-1FCCBF56B99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD95E5F-429F-4FF1-B36B-05C96C8581BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD95E5F-429F-4FF1-B36B-05C96C8581BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD95E5F-429F-4FF1-B36B-05C96C8581BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD95E5F-429F-4FF1-B36B-05C96C8581BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{761D3D72-2074-4F9D-B7C3-BA16C0A40C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761D3D72-2074-4F9D-B7C3-BA16C0A40C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761D3D72-2074-4F9D-B7C3-BA16C0A40C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761D3D72-2074-4F9D-B7C3-BA16C0A40C63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87E9A1D3-89DE-4F78-9CCA-75C8D0128729}
+	EndGlobalSection
+EndGlobal
