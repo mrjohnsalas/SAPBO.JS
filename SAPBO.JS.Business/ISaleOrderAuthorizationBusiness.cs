@@ -7,7 +7,9 @@ namespace SAPBO.JS.Business
     {
         Task<ICollection<SaleOrderAuthorization>> GetAllAsync(int year, int month);
 
-        Task<ICollection<SaleOrderAuthorization>> GetAllBySaleEmployeeIdAsync(int year, int month, int saleEmployeeId);
+        Task<ICollection<SaleOrderAuthorization>> GetAllBySaleEmployeeIdAsync(int saleEmployeeId, int year, int month);
+
+        Task<ICollection<SaleOrderAuthorization>> GetAllByBusinessPartnerIdAsync(string businessPartnerId, int year, int month);
 
         Task<SaleOrderAuthorization> GetAsync(int id, Enums.ObjectType objectType = Enums.ObjectType.Full);
 

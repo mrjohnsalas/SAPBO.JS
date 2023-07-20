@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SAPBO.JS.Business;
@@ -16,7 +12,6 @@ using SAPBO.JS.Model.Auth;
 using SAPBO.JS.Model.Domain;
 using SAPBO.JS.Model.Dto;
 using SAPBO.JS.WebApi.Utilities;
-using System.Diagnostics.Metrics;
 using System.Text;
 
 namespace SAPBO.JS.WebApi
@@ -174,6 +169,14 @@ namespace SAPBO.JS.WebApi
             services.AddScoped<ISapB1AutoMapper<DeliveryDetail>, DeliveryDetailMapper>();
             services.AddScoped<ISapB1AutoMapper<AppEmailGroupItem>, AppEmailGroupItemMapper>();
             services.AddScoped<ISapB1AutoMapper<SaleOrderAuthorization>, SaleOrderAuthorizationMapper>();
+            services.AddScoped<ISapB1AutoMapper<BilledAmountData>, BilledAmountDataMapper>();
+            services.AddScoped<ISapB1AutoMapper<TopBilledBusinessPartner>, TopBilledBusinessPartnerMapper>();
+            services.AddScoped<ISapB1AutoMapper<TopBilledProduct>, TopBilledProductMapper>();
+            services.AddScoped<ISapB1AutoMapper<SaleGoalDataBySaleEmployee>, SaleGoalDataBySaleEmployeeMapper>();
+            services.AddScoped<ISapB1AutoMapper<Bill>, BillMapper>();
+            services.AddScoped<ISapB1AutoMapper<BillDetail>, BillDetailMapper>();
+            services.AddScoped<ISapB1AutoMapper<BillFile>, BillFileMapper>();
+            services.AddScoped<ISapB1AutoMapper<ContactMessage>, ContactMessageMapper>();
 
             //Add Services
             services.AddScoped<IUserBusiness, UserBusiness>();
@@ -250,6 +253,14 @@ namespace SAPBO.JS.WebApi
             services.AddScoped<IDeliveryDetailBusiness, DeliveryDetailBusiness>();
             services.AddScoped<IEmailBusiness, EmailBusiness>();
             services.AddScoped<ISaleOrderAuthorizationBusiness, SaleOrderAuthorizationBusiness>();
+            services.AddScoped<IBilledAmountDataBusiness, BilledAmountDataBusiness>();
+            services.AddScoped<ITopBilledBusinessPartnerBusiness, TopBilledBusinessPartnerBusiness>();
+            services.AddScoped<ITopBilledProductBusiness, TopBilledProductBusiness>();
+            services.AddScoped<ISaleGoalDataBySaleEmployeeBusiness, SaleGoalDataBySaleEmployeeBusiness>();
+            services.AddScoped<IBillBusiness, BillBusiness>();
+            services.AddScoped<IBillDetailBusiness, BillDetailBusiness>();
+            services.AddScoped<IBillFileBusiness, BillFileBusiness>();
+            services.AddScoped<IContactMessageBusiness, ContactMessageBusiness>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

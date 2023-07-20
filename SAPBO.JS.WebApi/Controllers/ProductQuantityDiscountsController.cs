@@ -37,10 +37,38 @@ namespace SAPBO.JS.WebApi.Controllers
         }
 
         // GET api/values
+        [HttpGet("GetBySaleEmployeeId/{saleEmployeeId}", Name = "GetProductQuantityDiscountsBySaleEmployeeId")]
+        public async Task<ICollection<ProductQuantityDiscount>> GetBySaleEmployeeId(int saleEmployeeId, int year, int month)
+        {
+            return await repository.GetAllBySaleEmployeeIdAsync(saleEmployeeId, year, month);
+        }
+
+        // GET api/values
+        [HttpGet("GetByBusinessPartnerId/{businessPartnerId}", Name = "GetProductQuantityDiscountsByBusinessPartnerId")]
+        public async Task<ICollection<ProductQuantityDiscount>> GetByBusinessPartnerId(string businessPartnerId, int year, int month)
+        {
+            return await repository.GetAllByBusinessPartnerIdAsync(businessPartnerId, year, month);
+        }
+
+        // GET api/values
         [HttpGet(Name = "GetProductQuantityDiscountsByProductId")]
         public async Task<ICollection<ProductQuantityDiscount>> GetByProductId(int year, int month, string productId)
         {
             return await repository.GetAllByProductIdAsync(year, month, productId);
+        }
+
+        // GET api/values
+        [HttpGet("GetBySaleEmployeeIdAndProductId/{saleEmployeeId}", Name = "GetProductQuantityDiscountsBySaleEmployeeIdAndProductId")]
+        public async Task<ICollection<ProductQuantityDiscount>> GetBySaleEmployeeIdAndProductId(int saleEmployeeId, int year, int month, string productId)
+        {
+            return await repository.GetAllBySaleEmployeeIdAndProductIdAsync(saleEmployeeId, year, month, productId);
+        }
+
+        // GET api/values
+        [HttpGet("GetByBusinessPartnerIdAndProductId/{businessPartnerId}", Name = "GetProductQuantityDiscountsByBusinessPartnerIdAndProductId")]
+        public async Task<ICollection<ProductQuantityDiscount>> GetByBusinessPartnerIdAndProductId(string businessPartnerId, int year, int month, string productId)
+        {
+            return await repository.GetAllByBusinessPartnerIdAndProductIdAsync(businessPartnerId, year, month, productId);
         }
     }
 }

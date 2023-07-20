@@ -39,6 +39,11 @@ namespace SAPBO.JS.Business
             return await SetFullProperties(await GetAsync("GP_WEB_APP_360", new List<dynamic> { id }));
         }
 
+        public Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId)
+        {
+            return Task.FromResult(GetValue("GP_WEB_APP_489", "NRO_AC", new List<dynamic> { saleEmployeeId }));
+        }
+
         public Task CreateAsync(CRMActivity obj)
         {
             return Task.Run(() => CreateOrUpdate(obj, Enums.OperationType.Create));

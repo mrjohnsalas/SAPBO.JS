@@ -12,6 +12,8 @@ namespace SAPBO.JS.Business
 
         Task<SaleOpportunity> GetAsync(int id);
 
+        Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId);
+
         Task CreateAsync(SaleOpportunity obj);
 
         Task UpdateAsync(SaleOpportunity obj);

@@ -76,6 +76,27 @@ namespace SAPBO.JS.WebApi.Controllers
         }
 
         // GET api/values/5
+        [HttpGet("GetCountBySaleEmployeeId/{saleEmployeeId}", Name = "GetSaleOrdersCountBySaleEmployeeId")]
+        public Task<int> GetCountBySaleEmployeeId(int saleEmployeeId)
+        {
+            return repository.GetCountBySaleEmployeeIdAsync(saleEmployeeId);
+        }
+
+        // GET api/values/5
+        [HttpGet("GetCountByBusinessPartnerId/{businessPartnerId}", Name = "GetSaleOrdersCountByBusinessPartnerId")]
+        public Task<int> GetCountByBusinessPartnerId(string businessPartnerId)
+        {
+            return repository.GetCountByBusinessPartnerIdAsync(businessPartnerId);
+        }
+
+        // GET api/values
+        [HttpGet("GetTopByBusinessPartnerId/{businessPartnerId}", Name = "GetTopSaleOrdersByBusinessPartnerId")]
+        public async Task<ICollection<SaleOrder>> GetTopByBusinessPartnerId(string businessPartnerId, int count)
+        {
+            return await repository.GetTopByBusinessPartnerIdAsync(businessPartnerId, count);
+        }
+
+        // GET api/values/5
         [HttpGet("{id}", Name = "GetSaleOrder")]
         public async Task<ActionResult<SaleOrder>> Get(int id, Enums.ObjectType objectType = Enums.ObjectType.Full)
         {

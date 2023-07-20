@@ -1,4 +1,5 @@
 ﻿using SAPBO.JS.Common;
+using System.Net.Mail;
 
 namespace SAPBO.JS.Model.Dto
 {

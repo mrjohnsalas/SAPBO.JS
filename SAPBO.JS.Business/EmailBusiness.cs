@@ -82,6 +82,10 @@ namespace SAPBO.JS.Business
                 foreach (var address in obj.Co)
                     message.Bcc.Add(address);
 
+            if (obj.Attachments != null && obj.Attachments.Any())
+                foreach (var attachment in obj.Attachments)
+                    message.Attachments.Add(attachment);
+
             smtp.Send(message);
         }
     }

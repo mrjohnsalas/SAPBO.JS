@@ -9,6 +9,8 @@ namespace SAPBO.JS.Business
 
         Task<ShoppingCartItem> GetAsync(int id, DateTime? rateDate, string businessPartnerId = "", string currencyId = AppDefaultValues.CurrencyIdDolar);
 
+        Task<int> GetCountByUserIdAsync(string userId);
+
         Task CreateAsync(ShoppingCartItem obj);
 
         Task UpdateAsync(ShoppingCartItem obj);

@@ -9,7 +9,11 @@ namespace SAPBO.JS.WebApi.Controllers
 {
     [Route(AppConfiguration.WebApiRoutePath)]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = RoleNames.Admin + ", " + RoleNames.Customer + ", " + RoleNames.SalesEmployees)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = 
+        RoleNames.Admin + ", " +
+        RoleNames.Manager + ", " +
+        RoleNames.Customer + ", " +
+        RoleNames.SalesEmployees)]
     public class RatesController : Controller
     {
         private readonly IRateBusiness repository;
@@ -26,6 +30,20 @@ namespace SAPBO.JS.WebApi.Controllers
         public async Task<ICollection<Rate>> Get()
         {
             return await repository.GetAllForSalesAsync();
+        }
+
+        // GET api/values/5
+        [HttpGet("GetTodayUsdRate", Name = "GetTodayUsdRate")]
+        public async Task<ActionResult<Rate>> GetTodayUsdRate()
+        {
+            return await repository.GetByDateAndCurrencyIdAsync(DateTime.Now, "USD");
+        }
+
+        // GET api/values/5
+        [HttpGet("GetTodayRate", Name = "GetTodayRate")]
+        public async Task<ICollection<Rate>> GetTodayRate()
+        {
+            return await repository.GetTodayAsync();
         }
     }
 }

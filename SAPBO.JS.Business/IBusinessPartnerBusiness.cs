@@ -19,6 +19,8 @@ namespace SAPBO.JS.Business
 
         Task<ICollection<BusinessPartner>> GetAllWithTempBySaleEmployeeIdAsync(int saleEmployeeId, Enums.ObjectType objectType = Enums.ObjectType.Only);
 
+        Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId);
+
         Task<BusinessPartner> GetAsync(string businessPartnerId, Enums.ObjectType objectType = Enums.ObjectType.Only);
 
         Task<BusinessPartner> GetByRUCAsync(string ruc, Enums.ObjectType objectType = Enums.ObjectType.Only);

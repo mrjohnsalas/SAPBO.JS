@@ -161,6 +161,13 @@ namespace SAPBO.JS.WebApi.Controllers
             return await repository.GetAllWithTempBySaleEmployeeIdAsync(saleEmployeeId, objectType);
         }
 
+        // GET api/values/5
+        [HttpGet("GetCountBySaleEmployeeId/{saleEmployeeId}", Name = "GetBusinessPartnersCountBySaleEmployeeId")]
+        public Task<int> GetCountBySaleEmployeeId(int saleEmployeeId)
+        {
+            return repository.GetCountBySaleEmployeeIdAsync(saleEmployeeId);
+        }
+
         // GET api/values
         [HttpGet("GetTempAllBySaleEmployeeId/{saleEmployeeId}", Name = "GetTempAllBySaleEmployeeId")]
         public async Task<ICollection<BusinessPartner>> GetTempAllBySaleEmployeeId(int saleEmployeeId, Enums.ObjectType objectType = Enums.ObjectType.Only)

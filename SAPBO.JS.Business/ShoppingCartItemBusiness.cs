@@ -36,6 +36,11 @@ namespace SAPBO.JS.Business
             return await SetFullProperties(await GetAsync(id), rateDate, businessPartnerId, currencyId);
         }
 
+        public Task<int> GetCountByUserIdAsync(string userId)
+        {
+            return Task.FromResult(GetValue("GP_WEB_APP_517", "NRO_PD", new List<dynamic> { userId }));
+        }
+
         private Task<ShoppingCartItem> GetAsync(int id)
         {
             return GetAsync("GP_WEB_APP_010", new List<dynamic> { id });

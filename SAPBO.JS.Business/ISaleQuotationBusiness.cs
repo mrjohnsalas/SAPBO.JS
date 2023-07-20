@@ -13,6 +13,8 @@ namespace SAPBO.JS.Business
 
         Task<SaleQuotation> GetAsync(int id, Enums.ObjectType objectType = Enums.ObjectType.Full);
 
+        Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId);
+
         Task CreateAsync(SaleQuotation obj);
 
         Task UpdateAsync(SaleQuotation obj);

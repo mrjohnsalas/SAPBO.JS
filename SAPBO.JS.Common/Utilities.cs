@@ -190,6 +190,21 @@ namespace SAPBO.JS.Common
             }
         }
 
+        public static Enums.StatusType StringToBillStatus(string value)
+        {
+            switch (value)
+            {
+                case "D":
+                    return Enums.StatusType.Anulado;
+                case "C":
+                    return Enums.StatusType.Pagado;
+                case "O":
+                    return Enums.StatusType.Pendiente;
+                default:
+                    return Enums.StatusType.Pendiente;
+            }
+        }
+
         public static Enums.SaleOrderType StringToSaleOrderType(string value)
         {
             switch (value)
@@ -204,6 +219,44 @@ namespace SAPBO.JS.Common
                     return Enums.SaleOrderType.Otros;
                 default:
                     return Enums.SaleOrderType.Otros;
+            }
+        }
+
+        public static Enums.BillType StringToBillType(string value)
+        {
+            switch (value)
+            {
+                case "FC":
+                    return Enums.BillType.FacturaDeudores;
+                case "FR":
+                    return Enums.BillType.FacturaReserva;
+                case "FE":
+                    return Enums.BillType.FacturaExportacion;
+                case "BO":
+                    return Enums.BillType.Boleta;
+                case "FA":
+                    return Enums.BillType.Anticipo;
+                case "LT":
+                    return Enums.BillType.Letra;
+                case "ND":
+                    return Enums.BillType.NotaDebito;
+                default:
+                    return Enums.BillType.FacturaDeudores;
+            }
+        }
+
+        public static string BillFileTypeToContentType(Enums.BillFileType billFileType)
+        {
+            switch (billFileType)
+            {
+                case Enums.BillFileType.PDF:
+                    return AppDefaultValues.PDFApplication;
+                case Enums.BillFileType.XML:
+                    return AppDefaultValues.XMLApplication;
+                case Enums.BillFileType.Zip:
+                    return AppDefaultValues.ZipApplication;
+                default:
+                    return "";
             }
         }
 

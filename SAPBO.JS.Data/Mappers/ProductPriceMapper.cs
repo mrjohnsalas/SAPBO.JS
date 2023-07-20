@@ -24,14 +24,16 @@ namespace SAPBO.JS.Data.Mappers
             productPrice.FinalUnitPrice = productPrice.BaseUnitPrice;
             productPrice.SapFinalUnitPrice = productPrice.BaseUnitPrice;
 
+            //Customer discount
             productPrice.CustomerDiscount = decimal.Round(productPrice.FinalUnitPrice * productPrice.CustomerDiscountXje, 6);
             productPrice.Discount += productPrice.CustomerDiscount;
             productPrice.FinalUnitPrice -= productPrice.CustomerDiscount;
             productPrice.SapFinalUnitPrice -= productPrice.CustomerDiscount;
 
-            var productDiscount = decimal.Round(productPrice.FinalUnitPrice * productPrice.ProductDiscountXje, 6);
-            productPrice.Discount += productDiscount;
-            productPrice.FinalUnitPrice -= productPrice.CustomerDiscount;
+            //Product discount
+            productPrice.ProductDiscount = decimal.Round(productPrice.FinalUnitPrice * productPrice.ProductDiscountXje, 6);
+            productPrice.Discount += productPrice.ProductDiscount;
+            productPrice.FinalUnitPrice -= productPrice.ProductDiscount;
 
             return productPrice;
         }

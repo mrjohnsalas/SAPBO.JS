@@ -13,8 +13,8 @@ namespace SAPBO.JS.Business
 
         Task ApproveAsync(int id, string updatedBy);
 
-        Task RejectAsync(int id, string reason, string updatedBy);
-
         Task OverrideAsync(int id, string updatedBy);
+
+        Task RejectAsync(int id, string reason, string updatedBy);
     }
 }

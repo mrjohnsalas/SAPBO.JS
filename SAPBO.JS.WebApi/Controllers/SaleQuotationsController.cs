@@ -74,6 +74,13 @@ namespace SAPBO.JS.WebApi.Controllers
             }
         }
 
+        // GET api/values/5
+        [HttpGet("GetCountBySaleEmployeeId/{saleEmployeeId}", Name = "GetSaleQuotationsCountBySaleEmployeeId")]
+        public Task<int> GetCountBySaleEmployeeId(int saleEmployeeId)
+        {
+            return repository.GetCountBySaleEmployeeIdAsync(saleEmployeeId);
+        }
+
         // POST api/values
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] SaleQuotation saleQuotation)

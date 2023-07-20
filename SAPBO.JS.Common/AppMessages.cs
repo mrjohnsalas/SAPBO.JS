@@ -234,5 +234,13 @@ namespace SAPBO.JS.Common
         public const string Step4_DeliveryDeliveredImageLink = "https://www.grafipapel.com.pe/mailing_files/step_4.png";
         public const string Step4_DeliveryDeliveredTitle = "Tu entrega Nro.: {0} fue entregada.";
         public const string Step4_DeliveryDeliveredText = "Gracias por comprar con nosotros.";
+
+        public const string ContactMessageInternalSubject = "WP-Alerta: Nuevo mensaje de la página web";
+        public const string ContactMessageExternalSubject = "WP-Alerta: {0}, tu mensaje fue entregado satisfactoriamente.";
+        public const string ContactMessageImageLink = "https://www.grafipapel.com.pe/mailing_files/new_message.png";
+        public const string ContactMessageInternalTitle = "Nuevo mensaje de la página web.";
+        public const string ContactMessageInternalText = "Este mensaje fue enviado desde la sección Contacto de la pagina web.";
+        public const string ContactMessageExternalTitle = "¡Mensaje enviado!";
+        public const string ContactMessageExternalText = "Pronto un ejecutivo de ventas se pondrá en contacto con usted.";
     }
 }

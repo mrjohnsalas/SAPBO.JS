@@ -31,12 +31,20 @@ namespace SAPBO.JS.Business
             return await SetFullProperties(await GetAllAsync("GP_WEB_APP_049", new List<dynamic> { year, month }), Enums.ObjectType.Full);
         }
 
-        public async Task<ICollection<SaleOrderAuthorization>> GetAllBySaleEmployeeIdAsync(int year, int month, int saleEmployeeId)
+        public async Task<ICollection<SaleOrderAuthorization>> GetAllBySaleEmployeeIdAsync(int saleEmployeeId, int year, int month)
         {
             var systemDate = DateTime.Now;
             year = year <= 0 ? systemDate.Year : year;
             month = month <= 0 ? systemDate.Month : month;
-            return await SetFullProperties(await GetAllAsync("GP_WEB_APP_482", new List<dynamic> { year, month, saleEmployeeId }), Enums.ObjectType.Full);
+            return await SetFullProperties(await GetAllAsync("GP_WEB_APP_482", new List<dynamic> { saleEmployeeId, year, month }), Enums.ObjectType.Full);
+        }
+
+        public async Task<ICollection<SaleOrderAuthorization>> GetAllByBusinessPartnerIdAsync(string businessPartnerId, int year, int month)
+        {
+            var systemDate = DateTime.Now;
+            year = year <= 0 ? systemDate.Year : year;
+            month = month <= 0 ? systemDate.Month : month;
+            return await SetFullProperties(await GetAllAsync("GP_WEB_APP_506", new List<dynamic> { businessPartnerId, year, month }), Enums.ObjectType.Full);
         }
 
         public async Task<SaleOrderAuthorization> GetAsync(int id, Enums.ObjectType objectType = Enums.ObjectType.Full)

@@ -48,6 +48,13 @@ namespace SAPBO.JS.WebApi.Controllers
             }
         }
 
+        // GET api/values/5
+        [HttpGet("GetCountByUserId/{userId}", Name = "GetShoppingCartItemsCountByUserId")]
+        public Task<int> GetCountByUserId(string userId)
+        {
+            return repository.GetCountByUserIdAsync(userId);
+        }
+
         // POST api/values
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ShoppingCartItem shoppingCart)

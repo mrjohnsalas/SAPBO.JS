@@ -59,7 +59,9 @@ namespace SAPBO.JS.Common
             Cerrado,
             PorDespachar,
             ParcialmenteAtendido,
-            Autorizado
+            Autorizado,
+            Pagado,
+            Canjeado
         }
 
         public static IEnumerable<EnumDescriptionAndValue> GetAllEnumsWithChilds()
@@ -106,6 +108,13 @@ namespace SAPBO.JS.Common
             Day,
             Month,
             Year
+        }
+
+        public enum BillFileType
+        {
+            PDF,
+            XML,
+            Zip
         }
 
         public enum OperationType
@@ -202,6 +211,17 @@ namespace SAPBO.JS.Common
             Otros
         }
 
+        public enum BillType
+        {
+            FacturaDeudores,
+            FacturaReserva,
+            FacturaExportacion,
+            Boleta,
+            Anticipo,
+            Letra,
+            NotaDebito
+        }
+
         public enum PriceType
         {
             Local,
@@ -224,6 +244,12 @@ namespace SAPBO.JS.Common
             Ready,
             Dispatched,
             Delivered
+        }
+
+        public enum ContactMessageType
+        {
+            Internal,
+            External
         }
 
         public enum FileTypeGroup

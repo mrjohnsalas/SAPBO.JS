@@ -12,6 +12,8 @@ namespace SAPBO.JS.Business
 
         Task<CRMActivity> GetAsync(int id);
 
+        Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId);
+
         Task CreateAsync(CRMActivity obj);
 
         Task UpdateAsync(CRMActivity obj);

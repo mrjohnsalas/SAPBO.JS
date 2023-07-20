@@ -45,6 +45,11 @@ namespace SAPBO.JS.Business
             return await SetFullProperties(await GetAsync("GP_WEB_APP_378", new List<dynamic> { id }));
         }
 
+        public Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId)
+        {
+            return Task.FromResult(GetValue("GP_WEB_APP_490", "NRO_OP", new List<dynamic> { saleEmployeeId }));
+        }
+
         public async Task CreateAsync(SaleOpportunity obj)
         {
             obj.StartDate = DateTime.Now;

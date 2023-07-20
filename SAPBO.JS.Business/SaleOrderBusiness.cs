@@ -3,6 +3,8 @@ using SAPBO.JS.Data.Context;
 using SAPBO.JS.Data.Mappers;
 using SAPBO.JS.Data.Repositories;
 using SAPBO.JS.Model.Domain;
+using static SAPBO.JS.Common.Enums;
+using System;
 
 namespace SAPBO.JS.Business
 {
@@ -73,6 +75,21 @@ namespace SAPBO.JS.Business
             if (details == null || !details.Any())
                 return null;
             return await SetHeaderProperties(details);
+        }
+
+        public Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId)
+        {
+            return Task.FromResult(GetValue("GP_WEB_APP_486", "NRO_PD", new List<dynamic> { saleEmployeeId }));
+        }
+
+        public Task<int> GetCountByBusinessPartnerIdAsync(string businessPartnerId)
+        {
+            return Task.FromResult(GetValue("GP_WEB_APP_515", "NRO_PD", new List<dynamic> { businessPartnerId }));
+        }
+
+        public async Task<ICollection<SaleOrder>> GetTopByBusinessPartnerIdAsync(string businessPartnerId, int count)
+        {
+            return await SetFullProperties(await GetAllAsync("GP_WEB_APP_516", new List<dynamic> { businessPartnerId, count }), ObjectType.Only);
         }
 
         public async Task<ICollection<SaleOrder>> GetAllByBusinessPartnerIdAsync(string businessPartnerId, int year, int month, Enums.ObjectType objectType = Enums.ObjectType.Only)

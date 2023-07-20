@@ -106,31 +106,36 @@ namespace SAPBO.JS.Common
 
             sb.Append(spaceBlock);
             sb.Append(line);
-            sb.Append(detail.Replace("[DetailTitle]", emailAlertTemplateModel0.DetailTitle));
-            sb.Append(line);
-
-            foreach (var item in emailAlertTemplateModel0.Details)
+            if (!string.IsNullOrEmpty(emailAlertTemplateModel0.DetailTitle))
             {
-                sb.Append(product
-                    .Replace("[DetailName]", item.DetailName)
-                    .Replace("[DetailSecondName]", item.DetailSecondName)
-                    .Replace("[DetailSecondValue]", item.DetailSecondValue)
-                    .Replace("[DetailText]", item.DetailText)
-                    .Replace("[DetailRightName0]", item.DetailRightName0)
-                    .Replace("[DetailRightValue0]", item.DetailRightValue0)
-                    .Replace("[DetailRightName1]", item.DetailRightName1)
-                    .Replace("[DetailRightValue1]", item.DetailRightValue1)
-                );
+                sb.Append(detail.Replace("[DetailTitle]", emailAlertTemplateModel0.DetailTitle));
                 sb.Append(line);
             }
 
-            foreach (var foot in emailAlertTemplateModel0.Footers)
-            {
-                sb.Append(footerValues
-                    .Replace("[FooterName]", foot.Name)
-                    .Replace("[FooterValue]", foot.Value)
-                );
-            }
+            if (emailAlertTemplateModel0.Details != null && emailAlertTemplateModel0.Details.Any())
+                foreach (var item in emailAlertTemplateModel0.Details)
+                {
+                    sb.Append(product
+                        .Replace("[DetailName]", item.DetailName)
+                        .Replace("[DetailSecondName]", item.DetailSecondName)
+                        .Replace("[DetailSecondValue]", item.DetailSecondValue)
+                        .Replace("[DetailText]", item.DetailText)
+                        .Replace("[DetailRightName0]", item.DetailRightName0)
+                        .Replace("[DetailRightValue0]", item.DetailRightValue0)
+                        .Replace("[DetailRightName1]", item.DetailRightName1)
+                        .Replace("[DetailRightValue1]", item.DetailRightValue1)
+                    );
+                    sb.Append(line);
+                }
+
+            if (emailAlertTemplateModel0.Footers != null && emailAlertTemplateModel0.Footers.Any())
+                foreach (var foot in emailAlertTemplateModel0.Footers)
+                {
+                    sb.Append(footerValues
+                        .Replace("[FooterName]", foot.Name)
+                        .Replace("[FooterValue]", foot.Value)
+                    );
+                }
 
             sb.Append(line);
             sb.Append(spaceBlock);

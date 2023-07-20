@@ -10,7 +10,10 @@ namespace SAPBO.JS.WebApi.Controllers
 {
     [Route(AppConfiguration.WebApiRoutePath)]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = RoleNames.Admin + ", " + RoleNames.SalesEmployees)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = 
+        RoleNames.Admin + ", " +
+        RoleNames.Manager + ", " +
+        RoleNames.SalesEmployees)]
     public class SaleOpportunitiesController : ControllerBase
     {
         private readonly ISaleOpportunityBusiness repository;
@@ -46,6 +49,13 @@ namespace SAPBO.JS.WebApi.Controllers
             {
                 return BadRequest(new ServiceException { Message = $"{AppMessages.ErrorMessage} {e.Message}" });
             }
+        }
+
+        // GET api/values/5
+        [HttpGet("GetCountBySaleEmployeeId/{saleEmployeeId}", Name = "GetSaleOpportunitiesCountBySaleEmployeeId")]
+        public Task<int> GetCountBySaleEmployeeId(int saleEmployeeId)
+        {
+            return repository.GetCountBySaleEmployeeIdAsync(saleEmployeeId);
         }
 
         // POST api/values

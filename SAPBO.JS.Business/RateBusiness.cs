@@ -21,5 +21,10 @@ namespace SAPBO.JS.Business
         {
             return GetAsync("GP_WEB_APP_024", new List<dynamic> { date, currencyId });
         }
+
+        public Task<ICollection<Rate>> GetTodayAsync()
+        {
+            return GetAllAsync("GP_WEB_APP_485");
+        }
     }
 }

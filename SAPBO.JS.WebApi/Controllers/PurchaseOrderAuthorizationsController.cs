@@ -78,13 +78,13 @@ namespace SAPBO.JS.WebApi.Controllers
             return await repository.ApproveListAsync(ids, updatedBy);
         }
 
-        // POST api/values/end/5
-        [HttpPost("Reject/{id}")]
-        public async Task<ActionResult> Reject(int id, [FromBody] RejectReason rejectReason, [FromQuery] string updatedBy)
+        // POST api/values/init/5
+        [HttpPost("Override/{id}")]
+        public async Task<ActionResult> Override(int id, [FromQuery] string updatedBy)
         {
             try
             {
-                await repository.RejectAsync(id, rejectReason.Reason, updatedBy);
+                await repository.OverrideAsync(id, updatedBy);
 
                 return Ok();
             }
@@ -98,13 +98,13 @@ namespace SAPBO.JS.WebApi.Controllers
             }
         }
 
-        // POST api/values/init/5
-        [HttpPost("Override/{id}")]
-        public async Task<ActionResult> Override(int id, [FromQuery] string updatedBy)
+        // POST api/values/end/5
+        [HttpPost("Reject/{id}")]
+        public async Task<ActionResult> Reject(int id, [FromBody] RejectReason rejectReason, [FromQuery] string updatedBy)
         {
             try
             {
-                await repository.OverrideAsync(id, updatedBy);
+                await repository.RejectAsync(id, rejectReason.Reason, updatedBy);
 
                 return Ok();
             }

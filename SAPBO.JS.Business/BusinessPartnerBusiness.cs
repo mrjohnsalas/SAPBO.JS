@@ -104,6 +104,11 @@ namespace SAPBO.JS.Business
             return await SetFullProperties(await GetAllAsync("GP_WEB_APP_384", new List<dynamic> { saleEmployeeId }), objectType);
         }
 
+        public Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId)
+        {
+            return Task.FromResult(GetValue("GP_WEB_APP_488", "NRO_CU", new List<dynamic> { saleEmployeeId }));
+        }
+
         #endregion
 
         #region Credits

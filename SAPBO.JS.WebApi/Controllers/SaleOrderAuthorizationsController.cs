@@ -13,6 +13,7 @@ namespace SAPBO.JS.WebApi.Controllers
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles =
         RoleNames.Admin + ", " +
         RoleNames.Manager + ", " +
+        RoleNames.Customer + ", " +
         RoleNames.SalesEmployees + ", " +
         RoleNames.CreditEmployees)]
     public class SaleOrderAuthorizationsController : Controller
@@ -37,7 +38,14 @@ namespace SAPBO.JS.WebApi.Controllers
         [HttpGet("GetBySaleEmployeeId/{saleEmployeeId}", Name = "GetSaleOrderAuthorizationsBySaleEmployeeId")]
         public async Task<ICollection<SaleOrderAuthorization>> GetBySaleEmployeeId(int saleEmployeeId, int year, int month)
         {
-            return await repository.GetAllBySaleEmployeeIdAsync(year, month, saleEmployeeId);
+            return await repository.GetAllBySaleEmployeeIdAsync(saleEmployeeId, year, month);
+        }
+
+        // GET api/values
+        [HttpGet("GetByBusinessPartnerId/{businessPartnerId}", Name = "GetSaleOrderAuthorizationsByBusinessPartnerId")]
+        public async Task<ICollection<SaleOrderAuthorization>> GetByBusinessPartnerId(string businessPartnerId, int year, int month)
+        {
+            return await repository.GetAllByBusinessPartnerIdAsync(businessPartnerId, year, month);
         }
 
         // GET api/values/5

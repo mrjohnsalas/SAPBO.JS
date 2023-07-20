@@ -58,6 +58,11 @@ namespace SAPBO.JS.Model.Domain
         [DataType(DataType.Currency)]
         public decimal ProductDiscountXje { get; set; }
 
+        [Display(Name = "Descuento producto")]
+        [DisplayFormat(DataFormatString = AppFormats.FieldUnitPrice, ApplyFormatInEditMode = false)]
+        [DataType(DataType.Currency)]
+        public decimal ProductDiscount { get; set; }
+
         [Display(Name = "% Max descuento producto")]
         [DisplayFormat(DataFormatString = AppFormats.FieldPercentage, ApplyFormatInEditMode = false)]
         [DataType(DataType.Currency)]

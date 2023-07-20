@@ -10,7 +10,14 @@ namespace SAPBO.JS.WebApi.Controllers
 {
     [Route(AppConfiguration.WebApiRoutePath)]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = RoleNames.Admin + ", " + RoleNames.MaintenanceEmployees + ", " + RoleNames.SalesEmployees)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles =
+        RoleNames.Admin + ", " +
+        RoleNames.Manager + ", " +
+        RoleNames.Customer + ", " +
+        RoleNames.LogisticsEmployees + ", " +
+        RoleNames.SalesEmployees + ", " +
+        RoleNames.MaintenanceEmployees + ", " +
+        RoleNames.CreditEmployees)]
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeBusiness repository;

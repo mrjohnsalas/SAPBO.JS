@@ -24,6 +24,8 @@ namespace SAPBO.JS.Common
         public const string MimType = "";
         public const int PDFExtension = 1;
         public const string PDFApplication = "application/pdf";
+        public const string XMLApplication = "application/xml";
+        public const string ZipApplication = "application/zip";
 
         public const int MaxFileWeightInMb = 5;
     }

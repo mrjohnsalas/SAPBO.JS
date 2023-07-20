@@ -17,6 +17,12 @@ namespace SAPBO.JS.Business
 
         Task<ICollection<SaleOrder>> GetAllPendingByBusinessPartnerIdAsync(string businessPartnerId);
 
+        Task<int> GetCountBySaleEmployeeIdAsync(int saleEmployeeId);
+
+        Task<int> GetCountByBusinessPartnerIdAsync(string businessPartnerId);
+
+        Task<ICollection<SaleOrder>> GetTopByBusinessPartnerIdAsync(string businessPartnerId, int count);
+
         Task<ICollection<SaleOrder>> GetAllWithIdsAsync(IEnumerable<int> ids, Enums.ObjectType objectType = Enums.ObjectType.Only);
 
         Task<SaleOrder> GetAsync(int id, Enums.ObjectType objectType = Enums.ObjectType.Full);
